@@ -10,7 +10,8 @@
       <TargetName>Debug</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060183::V5.06 update 2 (build 183)::ARMCC</pCCUsed>
+      <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103ZE</Device>
@@ -79,10 +80,10 @@
             <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
-            <RunUserProg1>0</RunUserProg1>
-            <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
-            <UserProg2Name></UserProg2Name>
+            <RunUserProg1>1</RunUserProg1>
+            <RunUserProg2>1</RunUserProg2>
+            <UserProg1Name>fromelf.exe --bin -o "$L@L.bin"  "#L"</UserProg1Name>
+            <UserProg2Name>..\Tools\soft\BinCipherMaker.exe "$L@L.bin"</UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
@@ -132,12 +133,12 @@
             <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
-            <Capability>0</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <Capability>1</Capability>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -330,11 +331,12 @@
             <vShortWch>1</vShortWch>
             <v6Lto>0</v6Lto>
             <v6WtE>0</v6WtE>
+            <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER,_NoRTOSKernel,_DEBUG</Define>
+              <Define>DEV_VERSION=0x01000000,DEV_BUILD_KEY=0x44564946,DEV_CIPHER_KEY=0x4946,STM32F10X_HD,USE_STDPERIPH_DRIVER,_NoRTOSKernel,_DEBUG</Define>
               <Undefine></Undefine>
-              <IncludePath>..\iar-mdk;..\..\src\Chip\PeriphDriver\inc;..\..\src\Chip\STM32F10x\Comm\inc;..\..\src\Chip\STM32F10x\STM32F10x_StdPeriph_Driver\inc;..\..\src\Comm\utlis\inc;..\..\src\Comm\utlis\inc\trace;..\..\src\Comm\utlis\inc\trace\RTT;..\..\src\Core\inc</IncludePath>
+              <IncludePath>..\iar-mdk;..\..\src\Chip\PeriphDriver\inc;..\..\src\Chip\STM32F10x\Comm\inc;..\..\src\Chip\STM32F10x\STM32F10x_StdPeriph_Driver\inc;..\..\src\Comm\Config;..\..\src\Comm\utlis\inc;..\..\src\Comm\utlis\inc\trace;..\..\src\Comm\utlis\inc\trace\RTT;..\..\src\Core\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -347,9 +349,10 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
+            <uClangAs>0</uClangAs>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define></Define>
+              <Define>DEV_VERSION=0x01000000,DEV_BUILD_KEY=0x44564946,DEV_CIPHER_KEY=0x4946</Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
@@ -377,11 +380,6 @@
         <Group>
           <GroupName>app</GroupName>
           <Files>
-            <File>
-              <FileName>appcfg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\appcfg.h</FilePath>
-            </File>
             <File>
               <FileName>AppCore.c</FileName>
               <FileType>1</FileType>
@@ -454,6 +452,21 @@
         </Group>
         <Group>
           <GroupName>Comm\Param</GroupName>
+        </Group>
+        <Group>
+          <GroupName>Comm\Config</GroupName>
+          <Files>
+            <File>
+              <FileName>Ver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\src\Comm\Config\Ver.c</FilePath>
+            </File>
+            <File>
+              <FileName>AppCfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\src\Comm\Config\AppCfg.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Comm\utlis\libs</GroupName>
@@ -516,6 +529,7 @@
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060183::V5.06 update 2 (build 183)::ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103ZE</Device>
@@ -835,6 +849,7 @@
             <vShortWch>1</vShortWch>
             <v6Lto>0</v6Lto>
             <v6WtE>0</v6WtE>
+            <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER,_NoRTOSKernel,_DEBUG</Define>
@@ -852,6 +867,7 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
+            <uClangAs>0</uClangAs>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -882,11 +898,6 @@
         <Group>
           <GroupName>app</GroupName>
           <Files>
-            <File>
-              <FileName>appcfg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\appcfg.h</FilePath>
-            </File>
             <File>
               <FileName>AppCore.c</FileName>
               <FileType>1</FileType>
@@ -959,6 +970,21 @@
         </Group>
         <Group>
           <GroupName>Comm\Param</GroupName>
+        </Group>
+        <Group>
+          <GroupName>Comm\Config</GroupName>
+          <Files>
+            <File>
+              <FileName>Ver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\src\Comm\Config\Ver.c</FilePath>
+            </File>
+            <File>
+              <FileName>AppCfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\src\Comm\Config\AppCfg.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Comm\utlis\libs</GroupName>

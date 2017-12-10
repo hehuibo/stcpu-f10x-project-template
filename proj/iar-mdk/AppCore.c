@@ -30,7 +30,7 @@ static void AppTargetInit(void)
 		初始化
  ============================================================================
  */
-void AppTaskInit(void)
+static void vAppTaskInit(void)
 {
   AppTargetInit();
   
@@ -97,6 +97,7 @@ void vMainTask(void)
 
 /**任务**/
 const pfnFsmFUNCTION_t g_fnAppTaskAry = {
+	vAppTaskInit,
   vDelay10MSTask,
   vDelay1STask,
   vMainTask

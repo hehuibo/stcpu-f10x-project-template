@@ -3,13 +3,18 @@
 int main(void)
 {	
   uint8_t i = 0;
-  AppTaskInit();
+	
+	i = 0;
+	
+	g_fnAppTaskAry[i++]();
+	
+	
+	for(;;){
+		g_fnAppTaskAry[i++]();
+		if(i >= APP_MAX_FUNCITEM ){
+			i = 1;
+		}
+	}
 
-  while(1){
-    for(i=0; i< MAX_FUNCITEM; i++){
-      g_fnAppTaskAry[i]();
-    }
-    i = 0;			
-  }
 }
 

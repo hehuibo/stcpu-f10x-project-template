@@ -16,7 +16,6 @@ void vGPIO_Configure(void)
 	
 	GPIO_SetBits(GPIOA,GPIO_Pin_0); 
 	GPIO_SetBits(GPIOA,GPIO_Pin_1); 
-
 }
 
 

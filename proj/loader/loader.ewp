@@ -213,9 +213,11 @@
                     <name>CCDefines</name>
                     <state>_DEBUG</state>
                     <state>_LOADER</state>
-                    <state>JLINK_RTT_TRACE</state>
                     <state>STM32F10X_HD</state>
                     <state>USE_STDPERIPH_DRIVER</state>
+                    <state>DEV_CIPHER_KEY=0x424C</state>
+                    <state>DEV_VERSION=0x01000000</state>
+                    <state>DEV_BUILD_KEY=0x4456424C</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -346,6 +348,7 @@
                     <state>$PROJ_DIR$\..\..\src\Chip\STM32F10x\Comm\inc</state>
                     <state>$PROJ_DIR$\..\..\src\Chip\STM32F10x\STM32F10x_StdPeriph_Driver\inc</state>
                     <state>$PROJ_DIR$\..\..\src\Chip\STM32F10x\STM32_USB-FS-Device_Driver\inc</state>
+                    <state>$PROJ_DIR$\..\..\src\Comm\Config</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\utlis\inc</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\utlis\inc\trace</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\utlis\inc\trace\RTT</state>
@@ -523,7 +526,9 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state></state>
+                    <state>DEV_CIPHER_KEY=0x424C</state>
+                    <state>DEV_VERSION=0x01000000</state>
+                    <state>DEV_BUILD_KEY=0x4456424C</state>
                 </option>
                 <option>
                     <name>AList</name>
@@ -1059,11 +1064,11 @@
                 </option>
                 <option>
                     <name>Input description</name>
-                    <state>Automatic choice of formatter.</state>
+                    <state>Automatic choice of formatter, without multibyte support.</state>
                 </option>
                 <option>
                     <name>Output description</name>
-                    <state>Automatic choice of formatter.</state>
+                    <state>Automatic choice of formatter, without multibyte support.</state>
                 </option>
                 <option>
                     <name>GOutputBinary</name>
@@ -1238,9 +1243,11 @@
                 <debug>0</debug>
                 <option>
                     <name>CCDefines</name>
-                    <state>NDEBUG</state>
                     <state>_LOADER</state>
                     <state>STM32F10X_HD</state>
+                    <state>DEV_CIPHER_KEY=0x424C</state>
+                    <state>DEV_VERSION=0x01000000</state>
+                    <state>DEV_BUILD_KEY=0x4456424C</state>
                     <state>USE_STDPERIPH_DRIVER</state>
                 </option>
                 <option>
@@ -1372,6 +1379,7 @@
                     <state>$PROJ_DIR$\..\..\src\Chip\STM32F10x\Comm\inc</state>
                     <state>$PROJ_DIR$\..\..\src\Chip\STM32F10x\STM32F10x_StdPeriph_Driver\inc</state>
                     <state>$PROJ_DIR$\..\..\src\Chip\STM32F10x\STM32_USB-FS-Device_Driver\inc</state>
+                    <state>$PROJ_DIR$\..\..\src\Comm\Config</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\utlis\inc</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\utlis\inc\trace</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\utlis\inc\trace\RTT</state>
@@ -1549,7 +1557,9 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state></state>
+                    <state>DEV_CIPHER_KEY=0x424C</state>
+                    <state>DEV_VERSION=0x01000000</state>
+                    <state>DEV_BUILD_KEY=0x4456424C</state>
                 </option>
                 <option>
                     <name>AList</name>
@@ -2107,6 +2117,15 @@
     </group>
     <group>
         <name>comm</name>
+        <group>
+            <name>Config</name>
+            <file>
+                <name>$PROJ_DIR$\..\..\src\Comm\Config\AppCfg.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\src\Comm\Config\Ver.c</name>
+            </file>
+        </group>
         <group>
             <name>param</name>
         </group>

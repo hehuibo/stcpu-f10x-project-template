@@ -212,10 +212,12 @@
                 <option>
                     <name>CCDefines</name>
                     <state>_DEBUG</state>
-                    <state>STM32F10X_MD</state>
-                    <state>USE_STDPERIPH_DRIVER</state>
-                    <state>JLINK_RTT_TRACE</state>
                     <state>_NoRTOSKernel</state>
+                    <state>STM32F10X_HD</state>
+                    <state>USE_STDPERIPH_DRIVER</state>
+                    <state>DEV_CIPHER_KEY=0x4946</state>
+                    <state>DEV_VERSION=0x01000000</state>
+                    <state>DEV_BUILD_KEY=0x44564946</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -346,6 +348,7 @@
                     <state>$PROJ_DIR$\..\..\src\Chip\STM32F10x\Comm\inc</state>
                     <state>$PROJ_DIR$\..\..\src\Chip\STM32F10x\STM32F10x_StdPeriph_Driver\inc</state>
                     <state>$PROJ_DIR$\..\..\src\Chip\STM32F10x\STM32_USB-FS-Device_Driver\inc</state>
+                    <state>$PROJ_DIR$\..\..\src\Comm\Config</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\utlis\inc</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\utlis\inc\trace</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\utlis\inc\trace\RTT</state>
@@ -523,7 +526,9 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state></state>
+                    <state>DEV_CIPHER_KEY=0x4946</state>
+                    <state>DEV_VERSION=0x01000000</state>
+                    <state>DEV_BUILD_KEY=0x44564946</state>
                 </option>
                 <option>
                     <name>AList</name>
@@ -680,7 +685,7 @@
             <archiveVersion>1</archiveVersion>
             <data>
                 <prebuild></prebuild>
-                <postbuild></postbuild>
+                <postbuild>$PROJ_DIR$\..\Tools\soft\BinCipherMaker.exe  $EXE_DIR$\Template.bin</postbuild>
             </data>
         </settings>
         <settings>
@@ -1105,7 +1110,7 @@
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
-                    <state>STM32F103C8	ST STM32F103C8</state>
+                    <state>STM32F103RE	ST STM32F103RE</state>
                 </option>
                 <option>
                     <name>GenLowLevelInterface</name>
@@ -1165,7 +1170,7 @@
                 </option>
                 <option>
                     <name>GFPUDeviceSlave</name>
-                    <state>STM32F103C8	ST STM32F103C8</state>
+                    <state>STM32F103RE	ST STM32F103RE</state>
                 </option>
                 <option>
                     <name>FPU2</name>
@@ -1239,10 +1244,12 @@
                 <option>
                     <name>CCDefines</name>
                     <state>NDEBUG</state>
-                    <state>STM32F10X_MD</state>
-                    <state>USE_STDPERIPH_DRIVER</state>
-                    <state>UART_TRACE</state>
                     <state>_NoRTOSKernel</state>
+                    <state>STM32F10X_HD</state>
+                    <state>USE_STDPERIPH_DRIVER</state>
+                    <state>DEV_CIPHER_KEY=0x4946</state>
+                    <state>DEV_VERSION=0x01000000</state>
+                    <state>DEV_BUILD_KEY=0x44564946</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -1373,11 +1380,11 @@
                     <state>$PROJ_DIR$\..\..\src\Chip\STM32F10x\Comm\inc</state>
                     <state>$PROJ_DIR$\..\..\src\Chip\STM32F10x\STM32F10x_StdPeriph_Driver\inc</state>
                     <state>$PROJ_DIR$\..\..\src\Chip\STM32F10x\STM32_USB-FS-Device_Driver\inc</state>
+                    <state>$PROJ_DIR$\..\..\src\Comm\Config</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\utlis\inc</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\utlis\inc\trace</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\utlis\inc\trace\RTT</state>
                     <state>$PROJ_DIR$\..\..\src\Comm\Param\inc</state>
-                    <state>$PROJ_DIR$\..\..\src\Core\inc\CompositeDev</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -1551,7 +1558,9 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state></state>
+                    <state>DEV_CIPHER_KEY=0x4946</state>
+                    <state>DEV_VERSION=0x01000000</state>
+                    <state>DEV_BUILD_KEY=0x44564946</state>
                 </option>
                 <option>
                     <name>AList</name>
@@ -1673,7 +1682,7 @@
                 </option>
                 <option>
                     <name>OCOutputOverride</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
@@ -1708,7 +1717,7 @@
             <archiveVersion>1</archiveVersion>
             <data>
                 <prebuild></prebuild>
-                <postbuild></postbuild>
+                <postbuild>$PROJ_DIR$\..\Tools\soft\BinCipherMaker.exe  $EXE_DIR$\Template.bin</postbuild>
             </data>
         </settings>
         <settings>
@@ -2107,6 +2116,15 @@
     <group>
         <name>comm</name>
         <group>
+            <name>Config</name>
+            <file>
+                <name>$PROJ_DIR$\..\..\src\Comm\Config\AppCfg.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\src\Comm\Config\Ver.c</name>
+            </file>
+        </group>
+        <group>
             <name>param</name>
         </group>
         <group>
@@ -2123,7 +2141,7 @@
             <group>
                 <name>note</name>
                 <file>
-                    <name>$PROJ_DIR$\..\Tools\iar.txt</name>
+                    <name>$PROJ_DIR$\..\Tools\IAR-MDK.txt</name>
                 </file>
             </group>
             <group>

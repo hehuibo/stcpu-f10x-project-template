@@ -16,7 +16,7 @@ static void InitChipInternal(void)
 /***初始化外围设备***/
 static void InitBoardPeripheral(void)
 { 
-
+  //RFID_Init();
 }
 
 
@@ -30,7 +30,7 @@ static void AppTargetInit(void)
 		初始化
  ============================================================================
  */
-void AppTaskInit(void)
+static void vAppTaskInit(void)
 {
   AppTargetInit();
   
@@ -39,8 +39,8 @@ void AppTaskInit(void)
   
   /***初始化外围设备***/
   InitBoardPeripheral();  
+  
 }
-
 
 /*
  ============================================================================
@@ -59,8 +59,17 @@ void vDelay10MSTask(void)
     FSM_SetOn(g_FSM.FSM_TASK_DELAY1S);
     g_uiDelay1S = FSM_TIMEOUT_1S;
   }
+  
+  if((g_AppCommBfrMnt.mTimeOut > 0) && (--g_AppCommBfrMnt.mTimeOut == 0)){
+    g_AppCommBfrMnt.mRxLen = g_AppCommBfrMnt.mCnt;
+    g_AppCommBfrMnt.mCnt = 0;
+    g_AppCommBfrMnt.mTimeOut = 0;
+    FSM_SetOn(g_FSM.FLAG_USART1RXED);	
+  }
 
 }
+
+
 /*********************1STask****************************/
 void vDelay1STask(void)
 {
@@ -68,17 +77,27 @@ void vDelay1STask(void)
     return;
   }  
   FSM_SetOff(g_FSM.FSM_TASK_DELAY1S);
+  #if defined (UART_TRACE) || defined (JLINK_RTT_TRACE)
+  dbgTRACE_FUNCTION();
+  #endif   
 }
 
 /***************MainTask*************************/
 
 void vMainTask(void)
 {
+  if(FSM_IsOn(g_FSM.FLAG_USART1RXED)){
+    FSM_SetOff(g_FSM.FLAG_USART1RXED);	
+    #if defined (UART_TRACE) || defined (JLINK_RTT_TRACE)
+    dbgTRACE("RxBuffer[0]:%c\n", g_AppCommBfrMnt.pRxBfr[0]);
+    #endif 
+  }
 
 }
 
 /**任务**/
 const pfnFsmFUNCTION_t g_fnAppTaskAry = {
+	vAppTaskInit,
   vDelay10MSTask,
   vDelay1STask,
   vMainTask

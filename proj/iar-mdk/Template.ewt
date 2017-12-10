@@ -2424,6 +2424,15 @@
     <group>
         <name>comm</name>
         <group>
+            <name>Config</name>
+            <file>
+                <name>$PROJ_DIR$\..\..\src\Comm\Config\AppCfg.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\src\Comm\Config\Ver.c</name>
+            </file>
+        </group>
+        <group>
             <name>param</name>
         </group>
         <group>
@@ -2440,7 +2449,7 @@
             <group>
                 <name>note</name>
                 <file>
-                    <name>$PROJ_DIR$\..\Tools\iar.txt</name>
+                    <name>$PROJ_DIR$\..\Tools\IAR-MDK.txt</name>
                 </file>
             </group>
             <group>

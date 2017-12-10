@@ -61,9 +61,9 @@ __vector_table
         DCD     BusFault_Handler          ; Bus Fault Handler
         DCD     UsageFault_Handler        ; Usage Fault Handler
         DCD     0                         ; Reserved
-        DCD     0                         ; Reserved
-        DCD     0                         ; Reserved
-        DCD     0                         ; Reserved
+        DCD     DEV_VERSION               ; 软件版本
+        DCD     DEV_BUILD_KEY             ; 应用程序类型
+        DCD     DEV_BUILD_KEY             ; Reserved
         DCD     SVC_Handler               ; SVCall Handler
         DCD     DebugMon_Handler          ; Debug Monitor Handler
         DCD     0                         ; Reserved

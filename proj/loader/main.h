@@ -15,12 +15,10 @@
 #include "StartUpCfg.h"
 
 #if defined (_LOADER) || defined (_NoRTOSKernel) 
-#define MAX_FUNCITEM 3
+#define APP_MAX_FUNCITEM 3
 
 typedef void(*pfnFsmFUNCTION_t[])(void);
 extern const pfnFsmFUNCTION_t g_fnAppTaskAry;
-/******Task******/
-void AppTaskInit(void);
 #endif
 
 #endif

@@ -10,7 +10,8 @@
       <TargetName>Debug</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060183::V5.06 update 2 (build 183)::ARMCC</pCCUsed>
+      <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103ZE</Device>
@@ -330,9 +331,10 @@
             <vShortWch>1</vShortWch>
             <v6Lto>0</v6Lto>
             <v6WtE>0</v6WtE>
+            <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER,_LOADER,_DEBUG</Define>
+              <Define>DEV_VERSION=1000,STM32F10X_HD,DEV_BUILD_KEY=0x4456424C,DEV_CIPHER_KEY=0x424C,USE_STDPERIPH_DRIVER,_LOADER,_DEBUG</Define>
               <Undefine></Undefine>
               <IncludePath>..\loader;..\..\src\Chip\PeriphDriver\inc;..\..\src\Chip\STM32F10x\Comm\inc;..\..\src\Chip\STM32F10x\STM32F10x_StdPeriph_Driver\inc;..\..\src\Comm\utlis\inc;..\..\src\Comm\utlis\inc\trace;..\..\src\Comm\utlis\inc\trace\RTT;..\..\src\Core\inc</IncludePath>
             </VariousControls>
@@ -347,9 +349,10 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
+            <uClangAs>0</uClangAs>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define></Define>
+              <Define>DEV_VERSION=1000,DEV_BUILD_KEY=0x4456424C,DEV_CIPHER_KEY=0x424C</Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
@@ -506,6 +509,7 @@
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060183::V5.06 update 2 (build 183)::ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103ZE</Device>
@@ -825,6 +829,7 @@
             <vShortWch>1</vShortWch>
             <v6Lto>0</v6Lto>
             <v6WtE>0</v6WtE>
+            <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER,_LOADER,_DEBUG</Define>
@@ -842,6 +847,7 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
+            <uClangAs>0</uClangAs>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
